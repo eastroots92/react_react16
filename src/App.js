@@ -24,10 +24,12 @@ class Controlled extends Component {
       <button onClick={this._handleClick}>{`I have eaten ${pizzas} ${pizzas === 1 ? "pizza" : "pizzas"}`} </button>
     ); 
   }
-  _handleClick = () => {
+  _handleClick = (event) => {
+    alert(`${event.currentTarget.textContent}`);
     this.setState(eatPizza);
   }
 }
+
 
 const BoundaryHOC = ProtectedComponent => 
   class Boundary extends Component {
